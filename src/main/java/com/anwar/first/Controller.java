@@ -18,7 +18,10 @@ public class Controller {
 
         students.put(students.size() + 1, student);
 
-        return Map.of("Id", students.size());
+        Map<String, Integer> id = new ConcurrentHashMap<>();
+        id.put("id", students.size());
+
+        return id;
     }
 
     @GetMapping("/student/{id}")
